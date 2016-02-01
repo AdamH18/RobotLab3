@@ -1,0 +1,43 @@
+public class RobotTest
+{
+  public static void main(String[]args)
+  {
+    Lab3.testCompleteBars1();
+    Grid.pauseUntilMouse();
+    Lab3.testCompleteBars2();
+    Grid.pauseUntilMouse();
+    Lab3.testCombinePiles1();
+    Grid.pauseUntilMouse();
+    Lab3.testCombinePiles2();
+    Grid.pauseUntilMouse();
+    Lab3.testConnectDots1();
+    Grid.pauseUntilMouse();
+    Lab3.testConnectDots2();
+    Grid.pauseUntilMouse();
+    //SECRET WORLDS
+    Robot.load("connect3.txt");
+    Lab3.connectDots();
+    Grid.pauseUntilMouse();
+    Robot.load("connect4.txt");
+    Lab3.connectDots();
+    Grid.pauseUntilMouse();
+    Robot.load("piles3.txt");
+    Lab3.combinePiles();
+    Grid.pauseUntilMouse();
+    Robot.load("piles4.txt");
+    Lab3.combinePiles();
+    Grid.pauseUntilMouse();
+    Robot.load("dots3.txt");
+    Lab3.connectDots();
+    Grid.pauseUntilMouse();
+    Robot.load("dots4.txt");
+    Lab3.connectDots();
+    Grid.pauseUntilMouse();
+    
+    //BONUS
+    Robot.load("sort.txt");
+    Lab3.sort();
+   
+    
+  }
+}
