@@ -91,5 +91,10 @@ public class Lab3
    * so if you are loading your test file in that method, I will encounter an error and you
    * will not receive credit.*/
   
+  public static void sort()
+  {
+    
+  }
+  
    
 }
