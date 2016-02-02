@@ -14,29 +14,11 @@ public class RobotTest
     Grid.pauseUntilMouse();
     Lab3.testConnectDots2();
     Grid.pauseUntilMouse();
-    //SECRET WORLDS
-    Robot.load("connect3.txt");
-    Lab3.connectDots();
-    Grid.pauseUntilMouse();
-    Robot.load("connect4.txt");
-    Lab3.connectDots();
-    Grid.pauseUntilMouse();
-    Robot.load("piles3.txt");
-    Lab3.combinePiles();
-    Grid.pauseUntilMouse();
-    Robot.load("piles4.txt");
-    Lab3.combinePiles();
-    Grid.pauseUntilMouse();
-    Robot.load("dots3.txt");
-    Lab3.connectDots();
-    Grid.pauseUntilMouse();
-    Robot.load("dots4.txt");
-    Lab3.connectDots();
-    Grid.pauseUntilMouse();
     
-    //BONUS
-    Robot.load("sort.txt");
-    Lab3.sort();
+    
+    //EXTRA FUN
+//    Robot.load("sort.txt");
+//    Lab3.sort();
    
     
   }

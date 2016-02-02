@@ -17,8 +17,8 @@ public class RobotTest
     
     
     //EXTRA FUN
-//    Robot.load("sort.txt");
-//    Lab3.sort();
+    Robot.load("sort.txt");
+    Lab3.sort();
    
     
   }

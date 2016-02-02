@@ -183,9 +183,37 @@ public class Lab3
    * so if you are loading your test file in that method, I will encounter an error and you
    * will not receive credit.*/
   
-  public static void sort()
-  {
-    
+  public static void condDark(){
+    if(!Robot.onDark()){
+      Robot.makeDark();
+    }
+  }
+  
+  public static void sort(){
+    Robot.load("sort.txt");
+    Robot.setDelay(0.025);
+    boolean cont = true;
+    while(cont){
+      Lab3.condDark();
+      Robot.move();
+      Lab3.condDark();
+      Robot.turnLeft();
+      Robot.move();
+      Lab3.condDark();
+      Robot.move();
+      if(Robot.onDark()){
+        Robot.makeLight();
+      }
+      Lab3.turnAround();
+      Robot.move();
+      Robot.move();
+      Robot.turnLeft();
+      Robot.move();
+      Lab3.condDark();
+      if(!Robot.frontIsClear()){
+        cont = false;
+      }
+    }
   }
   
    

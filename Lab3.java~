@@ -22,10 +22,25 @@ public class Lab3
   
   public static void completeBars()
   {
-    //insert instructions below
-
-    
-    
+    boolean cont = true;
+    while(cont){
+      Robot.turnLeft();
+      while(!Robot.onDark()){
+        Robot.makeDark();
+        Robot.move();
+      }
+      Lab3.turnAround();
+      while(Robot.frontIsClear()){
+        Robot.move();
+      }
+      Robot.turnLeft();
+      if(Robot.frontIsClear()){
+        Robot.move();
+      }
+      else{
+        cont = false;
+      }
+    }
   }
   
   public static void testCompleteBars1()
@@ -44,10 +59,30 @@ public class Lab3
   
   public static void combinePiles()
   {
-    //insert instructions below
-
-    
-    
+    int count = 0;
+    while(Robot.onDark()){
+      count++;
+      Robot.makeLight();
+      if(Robot.frontIsClear()){
+        Robot.move();
+      }
+    }
+    Lab3.turnAround();
+    while(Robot.frontIsClear()){
+      Robot.move();
+    }
+    Robot.turnLeft();
+    Robot.move();
+    Robot.turnLeft();
+    while(Robot.onDark()){
+      Robot.move();
+    }
+    for(int i = count; i > 0; i--){
+      Robot.makeDark();
+      if(Robot.frontIsClear()){
+        Robot.move();
+      }
+    }
   }
 
   public static void testCombinePiles1()
@@ -64,12 +99,69 @@ public class Lab3
     combinePiles();
   }
   
+  public static void twoMove(){
+    Robot.move();
+    Robot.move();
+  }
+  
+  public static int probe(){
+    Lab3.twoMove();
+    if(Robot.onDark()){
+      Lab3.turnAround();
+      Lab3.twoMove();
+      Lab3.turnAround();
+      return 0;
+    }
+    Robot.turnLeft();
+    Lab3.twoMove();
+    Robot.turnLeft();
+    Lab3.twoMove();
+    Robot.turnLeft();
+    if(Robot.onDark()){
+      Lab3.twoMove();
+      Robot.turnLeft();
+      return 1;
+    }
+    Lab3.twoMove();
+    Lab3.twoMove();
+    if(Robot.onDark()){
+      Lab3.turnAround();
+      Lab3.twoMove();
+      Lab3.turnRight();
+      return 2;
+    }
+    Lab3.turnAround();
+    Lab3.twoMove();
+    Lab3.turnRight();
+    return 42;
+  }
+  
+  public static void fill(){
+    Robot.move();
+    Robot.makeDark();
+    Robot.move();
+  }
+  
   public static void connectDots()
   {
-    //insert instructions below
-
-    
-    
+    boolean cont = true;
+    while(cont){
+      int probe = Lab3.probe();
+      if(probe == 0){
+        Lab3.fill();
+      }
+      else if(probe == 1){
+        Robot.turnLeft();
+        Lab3.fill();
+      }
+      else if(probe == 2){
+        Lab3.turnRight();
+        Lab3.fill();
+      }
+      else{
+        cont = false;
+      }
+    }
   }
   
   public static void testConnectDots1()
